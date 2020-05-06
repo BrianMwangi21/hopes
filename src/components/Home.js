@@ -16,15 +16,12 @@ class Home extends Component {
     onCollectionUpdate = (querySnapshot) => {
         const hopenotes = [];
         querySnapshot.forEach((doc) => {
-          const { title, content, createdAt, modifiedAt, state } = doc.data();
+          const { content, nickname } = doc.data();
           hopenotes.push({
             key: doc.id,
             doc, // DocumentSnapshot
-            title,
             content,
-            createdAt,
-            modifiedAt,
-            state
+            nickname
           });
         });
         this.setState({
@@ -40,7 +37,7 @@ class Home extends Component {
         var notes = this.state.hopenotes.map((hopenote) => {
             return (
                 <Card style={{ "margin" : "20px" }}>
-                    <Card.Header>from {hopenote.title}</Card.Header>
+                    <Card.Header>from {hopenote.nickname}</Card.Header>
                     <Card.Body>
                         <Card.Text>
                             {hopenote.content}
