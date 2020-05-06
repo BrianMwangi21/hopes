@@ -21,11 +21,14 @@ class Navigation extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-    
         const { content } = this.state;
+
+        // Load and instantiate Chance
+        var chance = require('chance').Chance();
     
         this.ref.add({
-          content
+          content,
+          nickname : chance.name().toLowerCase()
         }).then((docRef) => {
           this.setState({
             content : ''
