@@ -2,7 +2,16 @@ import React, { Component } from "react";
 import { Container, Card } from 'react-bootstrap';
 import Masonry from 'react-masonry-css';
 import firebase from './Firebase';
-import { Typography } from '@material-ui/core';
+import posed from 'react-pose';
+
+const Box = posed.div({
+    hoverable: true,
+    draggable: 'x',
+    dragBounds: { left: '-5%', right: '5%' },
+    init: { scale: 1 },
+    hover: { scale: 0.9 },
+    drag: { scale: 0.9 }
+});
 
 class Home extends Component {
     constructor(props) {
@@ -37,16 +46,16 @@ class Home extends Component {
     render() {
         var notes = this.state.hopenotes.map((hopenote) => {
             return (
-                <Card>
-                    <Card.Header style={{ "background" : "#C5CAE9" }}>from {hopenote.nickname}</Card.Header>
-                    <Card.Body>
-                        <Card.Text>
-                            <Typography>
+                <Box>
+                    <Card>
+                        <Card.Header style={{ "background" : "#C5CAE9" }}>from {hopenote.nickname}</Card.Header>
+                        <Card.Body>
+                            <Card.Text>
                                 {hopenote.content}
-                            </Typography>
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Box>
             )
         });
 
