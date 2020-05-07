@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Card } from 'react-bootstrap';
 import Masonry from 'react-masonry-css';
 import firebase from './Firebase';
+import { Typography } from '@material-ui/core';
 
 class Home extends Component {
     constructor(props) {
@@ -37,10 +38,12 @@ class Home extends Component {
         var notes = this.state.hopenotes.map((hopenote) => {
             return (
                 <Card>
-                    <Card.Header>from {hopenote.nickname}</Card.Header>
+                    <Card.Header style={{ "background" : "#C5CAE9" }}>from {hopenote.nickname}</Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            {hopenote.content}
+                            <Typography>
+                                {hopenote.content}
+                            </Typography>
                         </Card.Text>
                     </Card.Body>
                 </Card>
