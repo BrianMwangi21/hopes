@@ -36,7 +36,7 @@ class Home extends Component {
     render() {
         var notes = this.state.hopenotes.map((hopenote) => {
             return (
-                <Card style={{ "margin" : "20px" }}>
+                <Card>
                     <Card.Header>from {hopenote.nickname}</Card.Header>
                     <Card.Body>
                         <Card.Text>
@@ -55,7 +55,7 @@ class Home extends Component {
         };
 
         return (
-            <Container>
+            <Container style={{"marginTop" : "20px"}}>
                 <Masonry
                 breakpointCols={breakpointColumnsObj}
                 className="my-masonry-grid"

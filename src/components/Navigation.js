@@ -43,13 +43,13 @@ class Navigation extends Component {
     render() {
         return(
             <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="#home">hopes - no matter the times</Navbar.Brand>
+                <Navbar.Brand href="#home">hopes | no matter the times</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                     </Nav>
                     <Form onSubmit={this.onSubmit} inline>
-                        <FormControl type="text" name="content" placeholder="Say something" value={this.state.content} onChange={this.onChange} className="mr-sm-2" />
+                        <FormControl type="text" name="content" placeholder="Say something" value={this.state.content} onChange={this.onChange} className="mr-sm-2" required />
                         <Button variant="outline-success" type="submit">Post!</Button>
                     </Form>
                 </Navbar.Collapse>
