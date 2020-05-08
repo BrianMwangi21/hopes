@@ -45,7 +45,7 @@ class Home extends Component {
             return (
                 <Box>
                     <Card>
-                        <Card.Header style={{ "background" : "#C5CAE9" }}>from {hopenote.nickname}</Card.Header>
+                        <Card.Header style={{ "background" : "#ffa781" }}>from {hopenote.nickname}</Card.Header>
                         <Card.Body>
                             <Card.Text>
                                 {hopenote.content}
