@@ -96,7 +96,7 @@ class Navigation extends Component {
                     <Nav className="mr-auto">
                     </Nav>
                     <Form onSubmit={this.onSubmit} inline>
-                        <FormControl type="text" name="content" placeholder="Say something ( and we'll give you a cute nickname, promise )" value={this.state.content} onChange={this.onChange} className="mr-lg-2" style={{"width" : "500px"}} maxlength="300" required />
+                        <FormControl disabled="true" type="text" name="content" placeholder="Say something ( and we'll give you a cute nickname, promise )" value={this.state.content} onChange={this.onChange} className="mr-lg-2" style={{"width" : "500px"}} maxlength="300" required />
                     </Form>
                 </Navbar.Collapse>
             </Navbar>
