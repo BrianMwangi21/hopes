@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 import firebase from './Firebase';
+import { profanity } from '@2toad/profanity';
+import { useAlert } from 'react-alert';
 
 class Navigation extends Component {
     constructor(props) {
@@ -23,21 +25,27 @@ class Navigation extends Component {
         e.preventDefault();
         const { content } = this.state;
 
-        // Load and instantiate Chance
-        var chance = require('chance').Chance();
-    
-        this.ref.add({
-          content,
-          nickname : chance.name().toLowerCase()
-        }).then((docRef) => {
-          this.setState({
-            content : ''
+        // Look for profanity
+        if( profanity.exists(content) ) {
+          const alert = useAlert();
+          alert.show("Ooops. Mind your language, pal");
+        }else {
+          // Load and instantiate Chance for random name
+          var chance = require('chance').Chance();
+
+          this.ref.add({
+            content,
+            nickname : chance.name().toLowerCase()
+          }).then((docRef) => {
+            this.setState({
+              content : ''
+            });
+            this.props.history.push("/")
+          })
+          .catch((error) => {
+            console.error("Error adding document: ", error);
           });
-          this.props.history.push("/")
-        })
-        .catch((error) => {
-          console.error("Error adding document: ", error);
-        });
+        }
       }
 
     render() {
