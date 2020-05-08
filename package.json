@@ -10,11 +10,14 @@
     "chance": "^1.1.4",
     "firebase": "^7.14.2",
     "react": "^16.13.1",
+    "react-alert": "^7.0.0",
+    "react-alert-template-basic": "^1.0.0",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-masonry-css": "^1.0.14",
     "react-pose": "^4.0.10",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "sentiment": "^5.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
