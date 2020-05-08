@@ -6,11 +6,8 @@ import posed from 'react-pose';
 
 const Box = posed.div({
     hoverable: true,
-    draggable: 'x',
-    dragBounds: { left: '-5%', right: '5%' },
     init: { scale: 1 },
-    hover: { scale: 0.9 },
-    drag: { scale: 0.9 }
+    hover: { scale: 0.95 },
 });
 
 class Home extends Component {
